@@ -23,18 +23,18 @@
         @csrf
         @method('PATCH')
         <p>
-            <label for="title">タイトル</label><br>
+            <label for="title">論文タイトル</label><br>
             <input type="text" name="title" id="title" value="{{ old('title', $task->title) }}">
         </p>
         <p>
             <label for="body">本文</label><br>
             <textarea name="body" class="body" id="body">{{ old('body', $task->body) }}</textarea><br>
             
-            <div class="button-group">
-                <button onclick='location.href="{{ route("tasks.show", $task) }}"'>更新</button>
-                <button onclick='location.href="{{ route("tasks.show", $task) }}"'>詳細に戻る</button>
-            </div>
         </p>
+        <div class="button-group">
+            <input type="submit" value="更新">
+            <button type="button" onclick='location.href="{{ route("tasks.show", $task) }}"'>詳細に戻る</button>
+        </div>
     </form>
 </body>
 </html>

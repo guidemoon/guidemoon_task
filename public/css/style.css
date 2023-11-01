@@ -3,3 +3,11 @@
 .button-group{
     display: flex;
 }
+
+.task-index{
+    display: flex;
+}
+
+.task-index > *:not(:last-child){
+    margin-right: 10px;
+}
