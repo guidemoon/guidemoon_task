@@ -8,18 +8,21 @@
 </head>
 <body>
     <h1>投稿論文編集</h1>
-    <h3>【エラー内容】</h3>
-    <ul>
-        {{-- エラー内容書く --}}
-        <li></li>
-    </ul>
-    <p>論文タイトル</p>
-    <input type="text">
     
-    <p>本文</p>
-    <input type="text">
-
-    <button></button>
-    <button></button>
+    <form action="{{ route('tasks.update', $task) }}" method="post">
+        @csrf
+        @method('PATCH')
+        <p>
+            <label for="title">タイトル</label><br>
+            <input type="text" name="title" id="title" value="{{ $task->title }}">
+        </p>
+        <p>
+            <label for="body">本文</label><br>
+            <textarea name="body" class="body" id="body">{{ $task->body }}</textarea>
+        </p>
+    
+        <button onclick='location.href="{{ route("tasks.show", $task) }}"'>更新</button>
+        <button onclick='location.href="{{ route("tasks.show", $task) }}"'>詳細に戻る</button>
+    </form>
 </body>
 </html>

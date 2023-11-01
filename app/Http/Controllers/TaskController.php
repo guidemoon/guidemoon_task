@@ -19,12 +19,6 @@ class TaskController extends Controller
         return view('tasks.show',['task' => $task]);
     }
 
-    public function create()
-    {
-        return view('tasks.create');
-
-    }
-
     public function store(Request $request)
     {
         $task = new Task;
@@ -45,10 +39,11 @@ class TaskController extends Controller
 
     public function update(Request $request, $id)
     {
-        $task = new Task;
+        $task = Task::find($id);
         
         $task->title = $request ->title;
         $task->body = $request ->body;
+        
         $task->save();
 
         return redirect(route("tasks.index"));        
