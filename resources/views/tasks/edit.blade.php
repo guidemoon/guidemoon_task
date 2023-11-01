@@ -20,9 +20,8 @@
             <label for="body">本文</label><br>
             <textarea name="body" class="body" id="body">{{ $task->body }}</textarea>
         </p>
-    
         <button onclick='location.href="{{ route("tasks.show", $task) }}"'>更新</button>
-        <button onclick='location.href="{{ route("tasks.show", $task) }}"'>詳細に戻る</button>
     </form>
+    <button onclick='location.href="{{ route("tasks.show", $task) }}"'>詳細に戻る</button>
 </body>
 </html>
