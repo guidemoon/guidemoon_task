@@ -8,23 +8,21 @@
 </head>
 <body>
     <h1>タスク詳細</h1>
-    <h1>{{ $task->title }}</h1>
-    <p>{!! nl2br(e($task->body)) !!}</p>
     
-    {{-- <div class="task-body">
-        <p>【内容】</p>
-        <p>{{ $tasks->body }}</p>
-        <button onclick="location.href='{{ route('tasks.index') }}'>一覧へ戻る</button>
+    <p>【タイトル】<br>{{ $task->title }}</p>
+    <p>【タイトル】<br>{!! nl2br(e($task->body)) !!}</p>
+    
+    <div class="back-tasks">
+        <a href="{{ route('tasks.index') }}">一覧へ戻る</a>
     </div>
     
-    <p></p>
-    
-    <p>内容</p>
-    <p>【内容】</p>
+    <div class="back-tasks">
+        <a href="/tasks">戻る</a>
+    </div>
 
-    <button></button>
-    <button></button>
-    <button></button> --}}
-    
+    <div class="back-tasks">
+        <a href="/tasks">戻る</a>
+    </div>
+
 </body>
 </html>
